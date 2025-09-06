@@ -2,7 +2,6 @@
 
 A complete full-stack e-commerce application built with React.js frontend and Node.js/Express backend with MongoDB database. Features user authentication, product management, shopping cart functionality, and responsive design.
 
-## 🚀 Features
 
 ### Backend Features
 - **User Authentication**: JWT-based authentication with secure password hashing
