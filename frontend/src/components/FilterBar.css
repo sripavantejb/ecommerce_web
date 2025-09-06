@@ -33,6 +33,14 @@
   font-size: 1rem;
   transition: all 0.3s ease;
   background: white;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1rem;
+  padding-right: 2.5rem;
 }
 
 .filter-input:focus,
@@ -40,6 +48,11 @@
   outline: none;
   border-color: #667eea;
   box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.filter-select:hover {
+  border-color: #667eea;
+  background-color: #f8f9ff;
 }
 
 .filter-input::placeholder {
@@ -85,5 +98,11 @@
   .filter-select {
     padding: 0.6rem;
     font-size: 0.9rem;
+    padding-right: 2rem;
+  }
+  
+  .filter-select {
+    background-size: 0.8rem;
+    background-position: right 0.6rem center;
   }
 }

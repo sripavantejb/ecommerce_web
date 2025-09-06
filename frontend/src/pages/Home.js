@@ -4,6 +4,7 @@ import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
 import ItemCard from '../components/ItemCard';
 import FilterBar from '../components/FilterBar';
+import Carousel from '../components/Carousel';
 import './Home.css';
 
 const Home = () => {
@@ -34,6 +35,17 @@ const Home = () => {
   useEffect(() => {
     fetchItems();
   }, [filters]);
+
+  // Handle category filtering from carousel
+  useEffect(() => {
+    const handleFilterByCategory = (event) => {
+      const { category } = event.detail;
+      setFilters(prev => ({ ...prev, category }));
+    };
+
+    window.addEventListener('filterByCategory', handleFilterByCategory);
+    return () => window.removeEventListener('filterByCategory', handleFilterByCategory);
+  }, []);
 
   const fetchItems = async () => {
     try {
@@ -97,8 +109,11 @@ const Home = () => {
 
   return (
     <div className="home">
+      {/* Carousel Section */}
+      <Carousel />
+      
       <div className="container">
-        <h1 className="page-title">Our Products</h1>
+        <h1 className="page-title" id="products">Our Products</h1>
         
         <FilterBar
           filters={filters}
